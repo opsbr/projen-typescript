@@ -19,6 +19,7 @@ const project = new cdk.JsiiProject({
     name: "opsbr-bot",
     email: "opsbr-bot@users.noreply.github.com",
   },
+  peerDeps: ["projen"],
 });
 project.devContainer.addDockerImage(
   DevEnvironmentDockerImage.fromImage(

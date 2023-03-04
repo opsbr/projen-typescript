@@ -1,5 +1,3 @@
-export class Hello {
-  public sayHello() {
-    return "hello, world!";
-  }
-}
+import { typescript } from "projen";
+
+export class OpsBRTypeScriptProject extends typescript.TypeScriptProject {}
