@@ -1,14 +1,28 @@
-const { cdk } = require('projen');
+const { cdk, DevEnvironmentDockerImage } = require("projen");
+const { GithubCredentials } = require("projen/lib/github");
+const { NpmAccess } = require("projen/lib/javascript");
 const project = new cdk.JsiiProject({
-  author: 'Ryosuke Iwanaga',
-  authorAddress: 'riywo@opsbr.com',
-  defaultReleaseBranch: 'main',
-  name: 'projen-typescript',
-  repositoryUrl: 'https://github.com/riywo/projen-typescript.git',
-
-  // deps: [],                /* Runtime dependencies of this module. */
-  // description: undefined,  /* The description is just a string that helps people understand the purpose of the package. */
-  // devDeps: [],             /* Build dependencies for this module. */
-  // packageName: undefined,  /* The "name" in package.json. */
+  author: "OpsBR Software Technology Inc.",
+  authorAddress: "https://opsbr.com",
+  authorOrganization: true,
+  defaultReleaseBranch: "main",
+  name: "projen-typescript",
+  packageName: "@opsbr/projen-typescript",
+  npmAccess: NpmAccess.PUBLIC,
+  repositoryUrl: "https://github.com/opsbr/projen-typescript.git",
+  devContainer: true,
+  prettier: true,
+  githubOptions: {
+    projenCredentials: GithubCredentials.fromApp(),
+  },
+  workflowGitIdentity: {
+    name: "opsbr-bot",
+    email: "opsbr-bot@users.noreply.github.com",
+  },
 });
+project.devContainer.addDockerImage(
+  DevEnvironmentDockerImage.fromImage(
+    "mcr.microsoft.com/devcontainers/typescript-node:0-18-bullseye"
+  )
+);
 project.synth();
