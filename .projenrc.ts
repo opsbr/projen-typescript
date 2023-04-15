@@ -21,6 +21,8 @@ const project = new cdk.JsiiProject({
   },
   peerDeps: ["projen"],
   projenrcTs: true,
+  jsiiVersion: "5.x",
+  typescriptVersion: "5.x",
 });
 project.devContainer?.addDockerImage(
   DevEnvironmentDockerImage.fromImage(
