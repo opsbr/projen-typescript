@@ -15,6 +15,7 @@ export class OpsBRTypeScriptProject extends typescript.TypeScriptProject {
         name: "opsbr-bot",
         email: "opsbr-bot@users.noreply.github.com",
       },
+      projenrcTs: true,
       ...options,
     });
     this.devContainer?.addDockerImage(
