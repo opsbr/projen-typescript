@@ -500,7 +500,7 @@ DEPRECATED.
 
 ---
 
-##### `hasScript` <a name="hasScript" id="@opsbr/projen-typescript.OpsBRTypeScriptProject.hasScript"></a>
+##### ~~`hasScript`~~ <a name="hasScript" id="@opsbr/projen-typescript.OpsBRTypeScriptProject.hasScript"></a>
 
 ```typescript
 public hasScript(name: string): boolean
