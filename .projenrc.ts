@@ -1,6 +1,6 @@
-const { cdk, DevEnvironmentDockerImage } = require("projen");
-const { GithubCredentials } = require("projen/lib/github");
-const { NpmAccess } = require("projen/lib/javascript");
+import { cdk, DevEnvironmentDockerImage } from "projen";
+import { GithubCredentials } from "projen/lib/github";
+import { NpmAccess } from "projen/lib/javascript";
 const project = new cdk.JsiiProject({
   author: "OpsBR Software Technology Inc.",
   authorAddress: "https://opsbr.com",
@@ -20,8 +20,9 @@ const project = new cdk.JsiiProject({
     email: "opsbr-bot@users.noreply.github.com",
   },
   peerDeps: ["projen"],
+  projenrcTs: true,
 });
-project.devContainer.addDockerImage(
+project.devContainer?.addDockerImage(
   DevEnvironmentDockerImage.fromImage(
     "mcr.microsoft.com/devcontainers/typescript-node:0-18-bullseye"
   )
