@@ -596,6 +596,7 @@ The command to execute.
 | <code><a href="#@opsbr/projen-typescript.OpsBRTypeScriptProject.property.projectBuild">projectBuild</a></code> | <code>projen.ProjectBuild</code> | Manages the build process of the project. |
 | <code><a href="#@opsbr/projen-typescript.OpsBRTypeScriptProject.property.projenCommand">projenCommand</a></code> | <code>string</code> | The command to use in order to run the projen CLI. |
 | <code><a href="#@opsbr/projen-typescript.OpsBRTypeScriptProject.property.root">root</a></code> | <code>projen.Project</code> | The root project. |
+| <code><a href="#@opsbr/projen-typescript.OpsBRTypeScriptProject.property.subprojects">subprojects</a></code> | <code>projen.Project[]</code> | Returns all the subprojects within this project. |
 | <code><a href="#@opsbr/projen-typescript.OpsBRTypeScriptProject.property.tasks">tasks</a></code> | <code>projen.Tasks</code> | Project tasks. |
 | <code><a href="#@opsbr/projen-typescript.OpsBRTypeScriptProject.property.testTask">testTask</a></code> | <code>projen.Task</code> | *No description.* |
 | <code><a href="#@opsbr/projen-typescript.OpsBRTypeScriptProject.property.defaultTask">defaultTask</a></code> | <code>projen.Task</code> | This is the "default" task, the one that executes "projen". |
@@ -844,6 +845,18 @@ public readonly root: Project;
 - *Type:* projen.Project
 
 The root project.
+
+---
+
+##### `subprojects`<sup>Required</sup> <a name="subprojects" id="@opsbr/projen-typescript.OpsBRTypeScriptProject.property.subprojects"></a>
+
+```typescript
+public readonly subprojects: Project[];
+```
+
+- *Type:* projen.Project[]
+
+Returns all the subprojects within this project.
 
 ---
 
