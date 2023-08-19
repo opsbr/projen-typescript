@@ -25,7 +25,7 @@ const project = new cdk.JsiiProject({
   typescriptVersion: "5.x",
   autoApproveUpgrades: true,
   autoApproveOptions: {
-    allowedUsernames: ["github-bot", "opsbr-bot"],
+    allowedUsernames: ["opsbr-bot[bot]"],
   },
 });
 project.devContainer?.addDockerImage(
