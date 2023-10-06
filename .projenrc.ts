@@ -19,6 +19,7 @@ const project = new cdk.JsiiProject({
     name: "opsbr-bot",
     email: "opsbr-bot@users.noreply.github.com",
   },
+  devDeps: ["projen"],
   peerDeps: ["projen"],
   projenrcTs: true,
   jsiiVersion: "5.x",
