@@ -1,6 +1,6 @@
 import { cdk, DevEnvironmentDockerImage } from "projen";
 import { GithubCredentials } from "projen/lib/github";
-import { NpmAccess } from "projen/lib/javascript";
+import { NpmAccess, UpgradeDependenciesSchedule } from "projen/lib/javascript";
 const project = new cdk.JsiiProject({
   author: "OpsBR Software Technology Inc.",
   authorAddress: "https://opsbr.com",
@@ -27,6 +27,11 @@ const project = new cdk.JsiiProject({
   autoApproveUpgrades: true,
   autoApproveOptions: {
     allowedUsernames: ["opsbr-bot[bot]"],
+  },
+  depsUpgradeOptions: {
+    workflowOptions: {
+      schedule: UpgradeDependenciesSchedule.WEEKLY,
+    },
   },
 });
 project.devContainer?.addDockerImage(
