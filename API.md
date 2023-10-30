@@ -1,9 +1,7 @@
 # replace this
 # API Reference <a name="API Reference" id="api-reference"></a>
 
-
-
-## Classes <a name="Classes" id="Classes"></a>
+## Constructs <a name="Constructs" id="Constructs"></a>
 
 ### OpsBRTypeScriptProject <a name="OpsBRTypeScriptProject" id="@opsbr/projen-typescript.OpsBRTypeScriptProject"></a>
 
@@ -31,6 +29,7 @@ new OpsBRTypeScriptProject(options: TypeScriptProjectOptions)
 
 | **Name** | **Description** |
 | --- | --- |
+| <code><a href="#@opsbr/projen-typescript.OpsBRTypeScriptProject.toString">toString</a></code> | Returns a string representation of this construct. |
 | <code><a href="#@opsbr/projen-typescript.OpsBRTypeScriptProject.addExcludeFromCleanup">addExcludeFromCleanup</a></code> | Exclude the matching files from pre-synth cleanup. |
 | <code><a href="#@opsbr/projen-typescript.OpsBRTypeScriptProject.addGitIgnore">addGitIgnore</a></code> | Adds a .gitignore pattern. |
 | <code><a href="#@opsbr/projen-typescript.OpsBRTypeScriptProject.addPackageIgnore">addPackageIgnore</a></code> | Exclude these files from the bundled package. |
@@ -62,6 +61,14 @@ new OpsBRTypeScriptProject(options: TypeScriptProjectOptions)
 | <code><a href="#@opsbr/projen-typescript.OpsBRTypeScriptProject.setScript">setScript</a></code> | Replaces the contents of an npm package.json script. |
 
 ---
+
+##### `toString` <a name="toString" id="@opsbr/projen-typescript.OpsBRTypeScriptProject.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
 
 ##### `addExcludeFromCleanup` <a name="addExcludeFromCleanup" id="@opsbr/projen-typescript.OpsBRTypeScriptProject.addExcludeFromCleanup"></a>
 
@@ -243,7 +250,7 @@ Synthesize all project files into `outdir`.
 
 1. Call "this.preSynthesize()"
 2. Delete all generated files
-3. Synthesize all sub-projects
+3. Synthesize all subprojects
 4. Synthesize all components of this project
 5. Call "postSynthesize()" for all components of this project
 6. Call "this.postSynthesize()"
@@ -573,11 +580,87 @@ The command to execute.
 
 ---
 
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@opsbr/projen-typescript.OpsBRTypeScriptProject.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@opsbr/projen-typescript.OpsBRTypeScriptProject.isProject">isProject</a></code> | Test whether the given construct is a project. |
+| <code><a href="#@opsbr/projen-typescript.OpsBRTypeScriptProject.of">of</a></code> | Find the closest ancestor project for given construct. |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="@opsbr/projen-typescript.OpsBRTypeScriptProject.isConstruct"></a>
+
+```typescript
+import { OpsBRTypeScriptProject } from '@opsbr/projen-typescript'
+
+OpsBRTypeScriptProject.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="@opsbr/projen-typescript.OpsBRTypeScriptProject.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isProject` <a name="isProject" id="@opsbr/projen-typescript.OpsBRTypeScriptProject.isProject"></a>
+
+```typescript
+import { OpsBRTypeScriptProject } from '@opsbr/projen-typescript'
+
+OpsBRTypeScriptProject.isProject(x: any)
+```
+
+Test whether the given construct is a project.
+
+###### `x`<sup>Required</sup> <a name="x" id="@opsbr/projen-typescript.OpsBRTypeScriptProject.isProject.parameter.x"></a>
+
+- *Type:* any
+
+---
+
+##### `of` <a name="of" id="@opsbr/projen-typescript.OpsBRTypeScriptProject.of"></a>
+
+```typescript
+import { OpsBRTypeScriptProject } from '@opsbr/projen-typescript'
+
+OpsBRTypeScriptProject.of(construct: IConstruct)
+```
+
+Find the closest ancestor project for given construct.
+
+When given a project, this it the project itself.
+
+###### `construct`<sup>Required</sup> <a name="construct" id="@opsbr/projen-typescript.OpsBRTypeScriptProject.of.parameter.construct"></a>
+
+- *Type:* constructs.IConstruct
+
+---
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
+| <code><a href="#@opsbr/projen-typescript.OpsBRTypeScriptProject.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
 | <code><a href="#@opsbr/projen-typescript.OpsBRTypeScriptProject.property.buildTask">buildTask</a></code> | <code>projen.Task</code> | *No description.* |
 | <code><a href="#@opsbr/projen-typescript.OpsBRTypeScriptProject.property.commitGenerated">commitGenerated</a></code> | <code>boolean</code> | Whether to commit the managed files by default. |
 | <code><a href="#@opsbr/projen-typescript.OpsBRTypeScriptProject.property.compileTask">compileTask</a></code> | <code>projen.Task</code> | *No description.* |
@@ -639,6 +722,18 @@ The command to execute.
 | <code><a href="#@opsbr/projen-typescript.OpsBRTypeScriptProject.property.eslint">eslint</a></code> | <code>projen.javascript.Eslint</code> | *No description.* |
 | <code><a href="#@opsbr/projen-typescript.OpsBRTypeScriptProject.property.tsconfig">tsconfig</a></code> | <code>projen.javascript.TypescriptConfig</code> | *No description.* |
 | <code><a href="#@opsbr/projen-typescript.OpsBRTypeScriptProject.property.tsconfigEslint">tsconfigEslint</a></code> | <code>projen.javascript.TypescriptConfig</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="@opsbr/projen-typescript.OpsBRTypeScriptProject.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
 
 ---
 
@@ -1398,5 +1493,7 @@ Normally
 this task should synthesize the project files.
 
 ---
+
+
 
 
