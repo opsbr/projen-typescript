@@ -35,13 +35,12 @@
   },
   "devDependencies": {
     "@types/jest": "^27",
-    "@types/node": "^16",
+    "@types/node": "^18",
     "@typescript-eslint/eslint-plugin": "^6",
     "@typescript-eslint/parser": "^6",
     "constructs": "^10.0.0",
     "eslint": "^8",
     "eslint-config-prettier": "^8.10.0",
-    "eslint-import-resolver-node": "^0.3.9",
     "eslint-import-resolver-typescript": "^3.6.1",
     "eslint-plugin-import": "^2.29.0",
     "eslint-plugin-prettier": "^4.2.1",
@@ -54,14 +53,14 @@
     "jsii-rosetta": "5.x",
     "npm-check-updates": "^16",
     "prettier": "^2.8.8",
-    "projen": "^0.76.20",
+    "projen": "^0.76.27",
     "standard-version": "^9",
     "ts-jest": "^27",
     "ts-node": "^10.9.1",
     "typescript": "5.x"
   },
   "peerDependencies": {
-    "projen": "^0.76.20"
+    "projen": "^0.76.27"
   },
   "main": "lib/index.js",
   "license": "Apache-2.0",
