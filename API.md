@@ -32,7 +32,7 @@ new OpsBRTypeScriptProject(options: TypeScriptProjectOptions)
 | <code><a href="#@opsbr/projen-typescript.OpsBRTypeScriptProject.toString">toString</a></code> | Returns a string representation of this construct. |
 | <code><a href="#@opsbr/projen-typescript.OpsBRTypeScriptProject.addExcludeFromCleanup">addExcludeFromCleanup</a></code> | Exclude the matching files from pre-synth cleanup. |
 | <code><a href="#@opsbr/projen-typescript.OpsBRTypeScriptProject.addGitIgnore">addGitIgnore</a></code> | Adds a .gitignore pattern. |
-| <code><a href="#@opsbr/projen-typescript.OpsBRTypeScriptProject.addPackageIgnore">addPackageIgnore</a></code> | Exclude these files from the bundled package. |
+| <code><a href="#@opsbr/projen-typescript.OpsBRTypeScriptProject.addPackageIgnore">addPackageIgnore</a></code> | Adds patterns to be ignored by npm. |
 | <code><a href="#@opsbr/projen-typescript.OpsBRTypeScriptProject.addTask">addTask</a></code> | Adds a new task to this project. |
 | <code><a href="#@opsbr/projen-typescript.OpsBRTypeScriptProject.addTip">addTip</a></code> | Prints a "tip" message during synthesis. |
 | <code><a href="#@opsbr/projen-typescript.OpsBRTypeScriptProject.annotateGenerated">annotateGenerated</a></code> | Marks the provided file(s) as being generated. |
@@ -111,14 +111,13 @@ The glob pattern to ignore.
 public addPackageIgnore(pattern: string): void
 ```
 
-Exclude these files from the bundled package.
-
-Implemented by project types based on the
-packaging mechanism. For example, `NodeProject` delegates this to `.npmignore`.
+Adds patterns to be ignored by npm.
 
 ###### `pattern`<sup>Required</sup> <a name="pattern" id="@opsbr/projen-typescript.OpsBRTypeScriptProject.addPackageIgnore.parameter.pattern"></a>
 
 - *Type:* string
+
+The pattern to ignore.
 
 ---
 
@@ -1476,6 +1475,7 @@ public readonly tsconfigEslint: TypescriptConfig;
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@opsbr/projen-typescript.OpsBRTypeScriptProject.property.DEFAULT_TASK">DEFAULT_TASK</a></code> | <code>string</code> | The name of the default task (the task executed when `projen` is run without arguments). |
+| <code><a href="#@opsbr/projen-typescript.OpsBRTypeScriptProject.property.DEFAULT_TS_JEST_TRANFORM_PATTERN">DEFAULT_TS_JEST_TRANFORM_PATTERN</a></code> | <code>string</code> | *No description.* |
 
 ---
 
@@ -1491,6 +1491,16 @@ The name of the default task (the task executed when `projen` is run without arg
 
 Normally
 this task should synthesize the project files.
+
+---
+
+##### `DEFAULT_TS_JEST_TRANFORM_PATTERN`<sup>Required</sup> <a name="DEFAULT_TS_JEST_TRANFORM_PATTERN" id="@opsbr/projen-typescript.OpsBRTypeScriptProject.property.DEFAULT_TS_JEST_TRANFORM_PATTERN"></a>
+
+```typescript
+public readonly DEFAULT_TS_JEST_TRANFORM_PATTERN: string;
+```
+
+- *Type:* string
 
 ---
 
