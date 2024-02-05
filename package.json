@@ -52,14 +52,14 @@
     "jsii-pacmak": "^1.94.0",
     "jsii-rosetta": "5.x",
     "prettier": "^2.8.8",
-    "projen": "^0.79.6",
+    "projen": "^0.79.7",
     "standard-version": "^9",
     "ts-jest": "^27",
     "ts-node": "^10.9.2",
     "typescript": "5.x"
   },
   "peerDependencies": {
-    "projen": "^0.79.6"
+    "projen": "^0.79.7"
   },
   "main": "lib/index.js",
   "license": "Apache-2.0",
